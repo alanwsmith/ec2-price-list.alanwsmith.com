@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS EC2 Pricing By Instance Family</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AWS EC2 Pricing By Instance Family" />
+    <meta
+      property="og:description"
+      content="A listing of AWS EC2 instance pricing sorted by family then price which make it easier for me to figure out what's going on"
+    />
+    <meta
+      property="og:image"
+      content="https://aws-ec2-pricing.alanwsmith.com/assets/og-images/main.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site:id" content="@TheIdOfAlan" />
+    <meta name="twitter:creator" content="@TheIdOfAlan" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicons/16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicons/32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/assets/favicons/96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="128x128"
+      href="/assets/favicons/128x128.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="196x196"
+      href="/assets/favicons/196x196.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="228x228"
+      href="/assets/favicons/228x228.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="/assets/favicons/152x152.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="167x167"
+      href="/assets/favicons/167x167.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="180x180"
+      href="/assets/favicons/180x180.png"
+    />
+
+    <style>
+      body {
+        background-color: #232946;
+        color: #b8c1ec;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #fffffe;
+      }
+      a {
+        color: #eebbc3;
+        text-decoration: none;
+      }
+      header {
+        padding-top: 18px;
+        padding-bottom: 4px;
+        width: 100%;
+        max-width: 78ch;
+        margin: 0 auto;
+        border-bottom: 1px solid #888;
+      }
+      main {
+        margin: 0 auto;
+      }
+      .prose {
+        max-width: 78ch;
+      }
+      footer {
+        width: 100%;
+        max-width: 78ch;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 60px;
+        padding-bottom: 12px;
+        font-size: 0.9rem;
+      }
+      td {
+        padding-right: 12px;
+        vertical-align: top;
+        padding-right: 8px;
+      }
+      .name_1,
+      .name_2,
+      .vcpu,
+      .gpu,
+      .memory {
+        text-align: center;
+      }
+      .cost {
+        font-family: monospace;
+        text-align: right;
+      }
+      th {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="https://www.alanwsmith.com/">alanwsmith.com</a> ~
+      <a href="https://links.alanwsmith.com">links</a> ~
+      <a href="https://podcast.alanwsmith.com/">podcast</a>
+    </header>
+    <main>
+      <div class="prose">
+        <h1>AWS EC2 Instance Pricing</h1>
+        <p>
+          Trying to figure out EC2 pricing never fails to frustrate me.
+          <a href="https://instances.vantage.sh/">This page</a> isn't bad, but I
+          wanted things sorted by price within each instance category. So, I
+          banged my head against the
+          <a href="https://aws-price-list-api-values.alanwsmith.com/"
+            >price list API</a
+          >
+          for a while and built it.
+        </p>
+        <p>
+          The first table is GPU instances sorted by card type. The second table
+          includes all instance types with GPU instances sorted directly by
+          price (regardless of card type). In each case, the price is for On
+          Demand Linux instances with no addiitonal software installed.
+        </p>
+        <p>
+          Prices are from Sept. 29, 2022. The
+          <a
+            href="https://github.com/alanwsmith/aws-ec2-instance-pricing.alanwsmith.com"
+            >source code is here</a
+          >
+          if you'd like to get current prices.
+        </p>
+      </div>
+      <h2>GPU Instances By Card Type</h2>
+      <table>
+        <tbody>
+          <tr>
+            <th>GPU Card</th>
+            <th colspan="2">Name</th>
+            <th>vCPUs</th>
+            <th>GPUs</th>
+            <th>Memory</th>
+            <th>&dollar;/Hour</th>
+          </tr>
+          $GPU_TABLE_ROWS
+        </tbody>
+      </table>
+      <h2>All Instance Types</h2>
+      <table>
+        <tbody>
+          <tr>
+            <th>Family</th>
+            <th colspan="2">Name</th>
+            <th>vCPUs</th>
+            <th>GPUs</th>
+            <th>Memory</th>
+            <th>&dollar;/Hour</th>
+            <th></th>
+          </tr>
+          $TABLE_ROWS
+        </tbody>
+      </table>
+      <div class="prose">
+        <h2>Notes</h2>
+        <ul>
+          <li>Prices are in USD</li>
+          <li>
+            I put this togehter because I'm working on a comparison of EC2
+            instances for rendering blender files. I couldn't get my head around
+            the pricing from the AWS UI and since that's always bugged me we
+            ended up here
+          </li>
+          <li>
+            I didn't put in any of the storage or network notes. There's a bunch
+            of different types that would have added clutter to this basic price
+            list that I was after
+          </li>
+          <li>
+            If you'd like to dig into the pricing API to make your own views
+            I've got a good starting point
+            <a href="https://aws-price-list-api-values.alanwsmith.com/"
+              >setup here</a
+            >
+          </li>
+          <li>
+            As mentioned above, this data doesn't update live. If you want the
+            current values you can
+            <a
+              href="https://github.com/alanwsmith/aws-ec2-instance-pricing.alanwsmith.com"
+              >grab the source code here</a
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      made by <a href="https://twitter.com/TheIdOfAlan">alan w. smith</a>
+      <br />
+      who has a <a href="https://www.alanwsmith.com">website</a> and a
+      <a href="https://podcast.alanwsmith.com/">podcast</a> <br />
+      among other <a href="https://links.alanwsmith.com">things</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,5303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS EC2 Pricing By Instance Family</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AWS EC2 Pricing By Instance Family" />
+    <meta
+      property="og:description"
+      content="A listing of AWS EC2 instance pricing sorted by family then price which make it easier for me to figure out what's going on"
+    />
+    <meta
+      property="og:image"
+      content="https://aws-ec2-pricing.alanwsmith.com/assets/og-images/main.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site:id" content="@TheIdOfAlan" />
+    <meta name="twitter:creator" content="@TheIdOfAlan" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicons/16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicons/32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/assets/favicons/96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="128x128"
+      href="/assets/favicons/128x128.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="196x196"
+      href="/assets/favicons/196x196.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="228x228"
+      href="/assets/favicons/228x228.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="/assets/favicons/152x152.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="167x167"
+      href="/assets/favicons/167x167.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="180x180"
+      href="/assets/favicons/180x180.png"
+    />
+
+    <style>
+      body {
+        background-color: #232946;
+        color: #b8c1ec;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #fffffe;
+      }
+      a {
+        color: #eebbc3;
+        text-decoration: none;
+      }
+      header {
+        padding-top: 18px;
+        padding-bottom: 4px;
+        width: 100%;
+        max-width: 72ch;
+        margin: 0 auto;
+        border-bottom: 1px solid #888;
+      }
+      main {
+        width: 100%;
+        max-width: 72ch;
+        margin: 0 auto;
+      }
+      footer {
+        width: 100%;
+        max-width: 72ch;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 60px;
+        padding-bottom: 12px;
+        font-size: 0.9rem;
+      }
+      td {
+        padding-right: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/">Home</a> ~
+      <a href="https://www.alanwsmith.com/">alanwsmith.com</a> ~
+      <a href="https://links.alanwsmith.com">links</a> ~
+      <a href="https://podcast.alanwsmith.com/">podcast</a>
+    </header>
+    <main>
+      <h1>AWS EC2 Instance Pricing</h1>
+      <p>
+        Trying to figure out EC2 pricing never fails to frustrate me.
+        <a href="https://instances.vantage.sh/">This page</a> isn't bad, but the
+        sort I want is by price in each category. So, I built it.
+      </p>
+      <p>
+        The prices are from Sept. 29, 2022. If you need to see up to the minute
+        prices, you can
+        <a
+          href="https://github.com/alanwsmith/aws-ec2-instance-pricing.alanwsmith.com"
+          >grab the script here</a
+        >. It's in the scripts dir. I don't have docs on it yet so you'll have
+        to poke at it to get it to run.
+      </p>
+      <p>
+        These prices are for On-Demand Linux instances with no other software
+        installed
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <th>Family</th>
+            <th colspan="2">Name</th>
+            <th>vCPUs</th>
+            <th>GPUs</th>
+            <th>Memory</th>
+            <th>Cost/Hour</th>
+          </tr>
+          
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">$0.034</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">$0.036</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">$0.038</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">$0.043</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.068</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.072</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.076</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.077</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.085</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.085</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.086</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.086</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.096</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c4</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">3.75</td>
+<td class="cost">$0.1</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.101</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">5.25</td>
+<td class="cost">$0.108</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.136</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.145</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.153</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.154</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.17</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.17</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.172</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.173</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.192</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c4</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">7.5</td>
+<td class="cost">$0.199</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.202</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">10.5</td>
+<td class="cost">$0.216</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.272</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.29</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.306</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.307</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.34</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.34</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.344</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.346</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.384</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c4</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">15</td>
+<td class="cost">$0.398</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.403</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">21</td>
+<td class="cost">$0.432</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.544</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.58</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.612</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.614</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.68</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.68</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.688</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.691</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.768</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c4</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">30</td>
+<td class="cost">$0.796</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.806</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">42</td>
+<td class="cost">$0.864</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$1.088</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$1.16</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$1.224</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$1.229</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$1.36</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$1.376</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$1.382</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">9xlarge</td>
+<td class="vcpu">36</td>
+<td class="gpu">0</td>
+<td class="memory">72</td>
+<td class="cost">$1.53</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c4</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">36</td>
+<td class="gpu">0</td>
+<td class="memory">60</td>
+<td class="cost">$1.591</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$1.613</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$1.632</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">9xlarge</td>
+<td class="vcpu">36</td>
+<td class="gpu">0</td>
+<td class="memory">72</td>
+<td class="cost">$1.728</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$1.74</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$1.836</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$1.843</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">9xlarge</td>
+<td class="vcpu">36</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$1.944</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$2.04</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$2.04</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$2.064</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$2.074</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$2.176</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$2.176</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$2.304</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$2.32</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$2.419</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$2.448</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$2.458</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$2.458</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$2.72</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$2.752</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$2.765</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">18xlarge</td>
+<td class="vcpu">72</td>
+<td class="gpu">0</td>
+<td class="memory">144</td>
+<td class="cost">$3.06</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$3.226</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">18xlarge</td>
+<td class="vcpu">72</td>
+<td class="gpu">0</td>
+<td class="memory">144</td>
+<td class="cost">$3.456</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$3.672</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">18xlarge</td>
+<td class="vcpu">72</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$3.888</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">metal</td>
+<td class="vcpu">72</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$3.888</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$4.08</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$4.08</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$4.08</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$4.128</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$4.608</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$4.608</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$4.838</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$4.896</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$5.44</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$5.44</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$6.451</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$6.451</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">48xlarge</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$7.344</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">metal</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$7.344</td>
+</tr>
+
+<tr>
+<td class="family">FPGA</td>
+<td class="name_1">f1</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">122</td>
+<td class="cost">$1.65</td>
+</tr>
+
+<tr>
+<td class="family">FPGA</td>
+<td class="name_1">f1</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">244</td>
+<td class="cost">$3.3</td>
+</tr>
+
+<tr>
+<td class="family">FPGA</td>
+<td class="name_1">f1</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">976</td>
+<td class="cost">$13.2</td>
+</tr>
+
+<tr>
+<td class="family">GPU AMD Radeon Pro V520</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">$0.379</td>
+</tr>
+
+<tr>
+<td class="family">GPU AMD Radeon Pro V520</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">$0.541</td>
+</tr>
+
+<tr>
+<td class="family">GPU AMD Radeon Pro V520</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">$0.867</td>
+</tr>
+
+<tr>
+<td class="family">GPU AMD Radeon Pro V520</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">2</td>
+<td class="memory">128</td>
+<td class="cost">$1.734</td>
+</tr>
+
+<tr>
+<td class="family">GPU AMD Radeon Pro V520</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">4</td>
+<td class="memory">256</td>
+<td class="cost">$3.468</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA A100 Tensor Core</td>
+<td class="name_1">p4d</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">1152</td>
+<td class="cost">$32.773</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA A100 Tensor Core</td>
+<td class="name_1">p4de</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">1152</td>
+<td class="cost">$40.966</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">$1.006</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">$1.212</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">$1.624</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">1</td>
+<td class="memory">128</td>
+<td class="cost">$2.448</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">1</td>
+<td class="memory">256</td>
+<td class="cost">$4.096</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">4</td>
+<td class="memory">192</td>
+<td class="cost">$5.672</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">4</td>
+<td class="memory">384</td>
+<td class="cost">$8.144</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">48xlarge</td>
+<td class="vcpu">192</td>
+<td class="gpu">8</td>
+<td class="memory">768</td>
+<td class="cost">$16.288</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA K80</td>
+<td class="name_1">p2</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">61</td>
+<td class="cost">$0.9</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA K80</td>
+<td class="name_1">p2</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">8</td>
+<td class="memory">488</td>
+<td class="cost">$7.2</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA K80</td>
+<td class="name_1">p2</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">16</td>
+<td class="memory">732</td>
+<td class="cost">$14.4</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">$0.526</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">$0.752</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">$1.204</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">1</td>
+<td class="memory">128</td>
+<td class="cost">$2.176</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">4</td>
+<td class="memory">192</td>
+<td class="cost">$3.912</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">1</td>
+<td class="memory">256</td>
+<td class="cost">$4.352</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">384</td>
+<td class="cost">$7.824</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">8</td>
+<td class="cost">$0.42</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">$0.556</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">$0.828</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">$1.372</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">2</td>
+<td class="memory">128</td>
+<td class="cost">$2.744</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">2</td>
+<td class="memory">128</td>
+<td class="cost">$2.744</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA Tesla M60</td>
+<td class="name_1">g3s</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">30.5</td>
+<td class="cost">$0.75</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA Tesla M60</td>
+<td class="name_1">g3</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">122</td>
+<td class="cost">$1.14</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA Tesla M60</td>
+<td class="name_1">g3</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">2</td>
+<td class="memory">244</td>
+<td class="cost">$2.28</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA Tesla M60</td>
+<td class="name_1">g3</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">4</td>
+<td class="memory">488</td>
+<td class="cost">$4.56</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA Tesla V100</td>
+<td class="name_1">p3</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">61</td>
+<td class="cost">$3.06</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA Tesla V100</td>
+<td class="name_1">p3</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">4</td>
+<td class="memory">244</td>
+<td class="cost">$12.24</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA Tesla V100</td>
+<td class="name_1">p3</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">8</td>
+<td class="memory">488</td>
+<td class="cost">$24.48</td>
+</tr>
+
+<tr>
+<td class="family">GPU NVIDIA Tesla V100</td>
+<td class="name_1">p3dn</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">768</td>
+<td class="cost">$31.212</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">nano</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">0.5</td>
+<td class="cost">$0.004</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">nano</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">0.5</td>
+<td class="cost">$0.005</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">nano</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">0.5</td>
+<td class="cost">$0.005</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">micro</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">1</td>
+<td class="cost">$0.008</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">micro</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">1</td>
+<td class="cost">$0.009</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">micro</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">1</td>
+<td class="cost">$0.01</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">small</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">$0.017</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">small</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">$0.019</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">small</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">$0.021</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">$0.025</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">medium</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.034</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.038</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">medium</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.038</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">medium</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.042</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.045</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">$0.051</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.067</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.075</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.077</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.083</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.086</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.086</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.09</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t2</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.093</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.096</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.096</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.1</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.102</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.103</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.113</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.119</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.119</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.134</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.136</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.15</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.154</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.165</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.166</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.172</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.173</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.181</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t2</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.186</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.192</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.192</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.2</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.204</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.206</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.226</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.237</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.238</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.269</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.272</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.301</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.308</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.33</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.333</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.344</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.346</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.362</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t2</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.371</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.384</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.384</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.4</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.408</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">metal</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.408</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.412</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.452</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.475</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.476</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.544</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.616</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.661</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.688</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.691</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.723</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.768</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.768</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.8</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.824</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.904</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.949</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.952</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">3xlarge</td>
+<td class="vcpu">12</td>
+<td class="gpu">0</td>
+<td class="memory">48</td>
+<td class="cost">$0.991</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$1.088</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.232</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.376</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.382</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.446</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.536</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.536</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.648</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.808</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$1.848</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.898</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.904</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$1.982</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">10xlarge</td>
+<td class="vcpu">40</td>
+<td class="gpu">0</td>
+<td class="memory">160</td>
+<td class="cost">$2.0</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$2.064</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$2.074</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$2.17</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$2.176</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$2.304</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$2.304</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.464</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.464</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$2.472</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$2.712</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.752</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.765</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$2.848</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$2.856</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.893</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.893</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$3.072</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$3.072</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$3.2</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$3.264</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$3.296</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$3.616</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$3.797</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$3.808</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$3.964</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$3.964</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$4.128</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$4.147</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$4.352</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$4.608</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$4.608</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$4.608</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$4.944</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$5.424</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$5.424</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$5.53</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$5.695</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$5.712</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$5.712</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$6.144</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$6.144</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$6.528</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$6.528</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$7.594</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$7.594</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">48xlarge</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$8.294</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">metal</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$8.294</td>
+</tr>
+
+<tr>
+<td class="family">Machine Learning ASIC</td>
+<td class="name_1">inf1</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.228</td>
+</tr>
+
+<tr>
+<td class="family">Machine Learning ASIC</td>
+<td class="name_1">inf1</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.362</td>
+</tr>
+
+<tr>
+<td class="family">Machine Learning ASIC</td>
+<td class="name_1">inf1</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">48</td>
+<td class="cost">$1.18</td>
+</tr>
+
+<tr>
+<td class="family">Machine Learning ASIC</td>
+<td class="name_1">inf1</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$4.721</td>
+</tr>
+
+<tr>
+<td class="family">Machine Learning ASIC</td>
+<td class="name_1">dl1</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$13.109</td>
+</tr>
+
+<tr>
+<td class="family">Media Accelerator</td>
+<td class="name_1">vt1</td>
+<td class="name_2">3xlarge</td>
+<td class="vcpu">12</td>
+<td class="gpu">0</td>
+<td class="memory">24</td>
+<td class="cost">$0.65</td>
+</tr>
+
+<tr>
+<td class="family">Media Accelerator</td>
+<td class="name_1">vt1</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">48</td>
+<td class="cost">$1.3</td>
+</tr>
+
+<tr>
+<td class="family">Media Accelerator</td>
+<td class="name_1">vt1</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$5.2</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.05</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.058</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.084</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.101</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.113</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.113</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.115</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.126</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.126</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.131</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">15.25</td>
+<td class="cost">$0.133</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.144</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.149</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.149</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.151</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.167</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.167</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.186</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.202</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.226</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.227</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.23</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.252</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.252</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.262</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">30.5</td>
+<td class="cost">$0.266</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.288</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.298</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.298</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.302</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.334</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.334</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.372</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.403</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.452</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.454</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.461</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.504</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.504</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.524</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">61</td>
+<td class="cost">$0.532</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.576</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.596</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.596</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.605</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.668</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$0.668</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.744</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$0.806</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">122</td>
+<td class="cost">$0.834</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$0.834</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$0.904</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$0.907</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$0.922</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.008</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.008</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.048</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">122</td>
+<td class="cost">$1.064</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">3xlarge</td>
+<td class="vcpu">12</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$1.116</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.152</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.192</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.192</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.21</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.336</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$1.336</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$1.613</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$1.667</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">244</td>
+<td class="cost">$1.668</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$1.668</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$1.808</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$1.814</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$1.843</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.016</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.016</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.096</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">244</td>
+<td class="cost">$2.128</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$2.232</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.304</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.384</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.384</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$2.419</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.419</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.672</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$2.672</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$2.712</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$2.722</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$2.765</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$3.024</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$3.024</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$3.144</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$3.226</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$3.226</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$3.334</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">488</td>
+<td class="cost">$3.336</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$3.336</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$3.456</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$3.576</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$3.576</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$3.616</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$3.629</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$3.629</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$3.686</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$3.686</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$4.008</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$4.008</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$4.032</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$4.032</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$4.192</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">488</td>
+<td class="cost">$4.256</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$4.464</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">metal</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$4.464</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$4.608</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$4.768</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$4.768</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$4.838</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$5.004</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$5.344</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$5.344</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$5.344</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$5.424</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$5.443</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$6.048</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$6.048</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$6.048</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$6.288</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">976</td>
+<td class="cost">$6.669</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2idn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$6.669</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$6.669</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">976</td>
+<td class="cost">$6.672</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$6.672</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$6.912</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$6.912</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$7.152</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$7.152</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$7.152</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$7.152</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$7.258</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$7.258</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$8.016</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$8.016</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$8.064</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$8.064</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$9.677</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$9.677</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2idn</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">1536</td>
+<td class="cost">$10.004</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">1536</td>
+<td class="cost">$10.008</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">1536</td>
+<td class="cost">$10.008</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">48xlarge</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">1536</td>
+<td class="cost">$10.886</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">metal</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">1536</td>
+<td class="cost">$10.886</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1952</td>
+<td class="cost">$13.338</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2idn</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">2048</td>
+<td class="cost">$13.338</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2idn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">2048</td>
+<td class="cost">$13.338</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">2048</td>
+<td class="cost">$13.338</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">1952</td>
+<td class="cost">$13.344</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">3072</td>
+<td class="cost">$20.007</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">4096</td>
+<td class="cost">$26.676</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">4096</td>
+<td class="cost">$26.676</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">3904</td>
+<td class="cost">$26.688</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">u-3tb1</td>
+<td class="name_2">56xlarge</td>
+<td class="vcpu">224</td>
+<td class="gpu">0</td>
+<td class="memory">3072</td>
+<td class="cost">$27.3</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">u-6tb1</td>
+<td class="name_2">56xlarge</td>
+<td class="vcpu">224</td>
+<td class="gpu">0</td>
+<td class="memory">6144</td>
+<td class="cost">$46.404</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">u-6tb1</td>
+<td class="name_2">112xlarge</td>
+<td class="vcpu">448</td>
+<td class="gpu">0</td>
+<td class="memory">6144</td>
+<td class="cost">$54.6</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">u-9tb1</td>
+<td class="name_2">112xlarge</td>
+<td class="vcpu">448</td>
+<td class="gpu">0</td>
+<td class="memory">9216</td>
+<td class="cost">$81.9</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">u-12tb1</td>
+<td class="name_2">112xlarge</td>
+<td class="vcpu">448</td>
+<td class="gpu">0</td>
+<td class="memory">12288</td>
+<td class="cost">$109.2</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">6</td>
+<td class="cost">$0.144</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">15.25</td>
+<td class="cost">$0.156</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.172</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">$0.182</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.226</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">12</td>
+<td class="cost">$0.288</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">30.5</td>
+<td class="cost">$0.312</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.343</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.364</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.452</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">h1</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.468</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.499</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">$0.526</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">24</td>
+<td class="cost">$0.576</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">61</td>
+<td class="cost">$0.624</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.686</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d2</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">30.5</td>
+<td class="cost">$0.69</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$0.728</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.904</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">h1</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.936</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$0.999</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">$1.051</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">48</td>
+<td class="cost">$1.153</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">122</td>
+<td class="cost">$1.248</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">3xlarge</td>
+<td class="vcpu">12</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$1.356</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.373</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d2</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">61</td>
+<td class="cost">$1.38</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$1.455</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">h1</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.872</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$1.998</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">$2.103</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$2.305</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">244</td>
+<td class="cost">$2.496</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$2.712</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$2.746</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d2</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">122</td>
+<td class="cost">$2.76</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$2.91</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">$3.154</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">h1</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$3.744</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$3.996</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">$4.206</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$4.61</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">488</td>
+<td class="cost">$4.992</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">metal</td>
+<td class="vcpu">72</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$4.992</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">$5.424</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">$5.491</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d2</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">36</td>
+<td class="gpu">0</td>
+<td class="memory">244</td>
+<td class="cost">$5.52</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">$5.821</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">$6.309</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$10.848</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">$10.848</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$10.982</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">$10.982</td>
+</tr>
+
+        </tbody>
+      </table>
+    </main>
+
+    <footer>
+      made by <a href="https://twitter.com/TheIdOfAlan">alan w. smith</a>
+      <br />
+      who has a <a href="https://www.alanwsmith.com">website</a> and a
+      <a href="https://podcast.alanwsmith.com/">podcast</a> <br />
+      among other <a href="https://links.alanwsmith.com">things</a>
+    </footer>
+  </body>
+</html>

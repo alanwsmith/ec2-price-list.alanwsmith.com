@@ -1,0 +1,6831 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS EC2 Pricing By Instance Family</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AWS EC2 Pricing By Instance Family" />
+    <meta
+      property="og:description"
+      content="A listing of AWS EC2 instance pricing sorted by family then price which make it easier for me to figure out what's going on"
+    />
+    <meta
+      property="og:image"
+      content="https://aws-ec2-pricing.alanwsmith.com/assets/og-images/main.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site:id" content="@TheIdOfAlan" />
+    <meta name="twitter:creator" content="@TheIdOfAlan" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicons/16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicons/32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/assets/favicons/96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="128x128"
+      href="/assets/favicons/128x128.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="196x196"
+      href="/assets/favicons/196x196.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="228x228"
+      href="/assets/favicons/228x228.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="/assets/favicons/152x152.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="167x167"
+      href="/assets/favicons/167x167.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="180x180"
+      href="/assets/favicons/180x180.png"
+    />
+
+    <style>
+      body {
+        background-color: #232946;
+        color: #b8c1ec;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #fffffe;
+      }
+      a {
+        color: #eebbc3;
+        text-decoration: none;
+      }
+      header {
+        padding-top: 18px;
+        padding-bottom: 4px;
+        width: 100%;
+        max-width: 78ch;
+        margin: 0 auto;
+        border-bottom: 1px solid #888;
+      }
+      main {
+        margin: 0 auto;
+      }
+      .prose {
+        max-width: 78ch;
+      }
+      footer {
+        width: 100%;
+        max-width: 78ch;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 60px;
+        padding-bottom: 12px;
+        font-size: 0.9rem;
+      }
+      td {
+        padding-right: 12px;
+        vertical-align: top;
+        padding-right: 8px;
+      }
+      .name_1,
+      .name_2,
+      .vcpu,
+      .gpu,
+      .memory {
+        text-align: center;
+      }
+      .cost {
+        font-family: monospace;
+        text-align: right;
+      }
+      th {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="https://www.alanwsmith.com/">alanwsmith.com</a> ~
+      <a href="https://links.alanwsmith.com">links</a> ~
+      <a href="https://podcast.alanwsmith.com/">podcast</a>
+    </header>
+    <main>
+      <div class="prose">
+        <h1>AWS EC2 Instance Pricing</h1>
+        <p>
+          Trying to figure out EC2 pricing never fails to frustrate me.
+          <a href="https://instances.vantage.sh/">This page</a> isn't bad, but I
+          wanted things sorted by price within each instance category. So, I
+          banged my head against the
+          <a href="https://aws-price-list-api-values.alanwsmith.com/"
+            >price list API</a
+          >
+          for a while and built it.
+        </p>
+        <p>
+          The first table is GPU instances sorted by card type. The second table
+          includes all instance types with GPU instances sorted directly by
+          price (regardless of card type). In each case, the price is for On
+          Demand Linux instances with no addiitonal software installed.
+        </p>
+        <p>
+          Prices are from Sept. 29, 2022. The
+          <a
+            href="https://github.com/alanwsmith/aws-ec2-instance-pricing.alanwsmith.com"
+            >source code is here</a
+          >
+          if you'd like to get current prices.
+        </p>
+      </div>
+      <h2>GPU Instances By Card Type</h2>
+      <table>
+        <tbody>
+          <tr>
+            <th>GPU Card</th>
+            <th colspan="2">Name</th>
+            <th>vCPUs</th>
+            <th>GPUs</th>
+            <th>Memory</th>
+            <th>&dollar;/Hour</th>
+          </tr>
+          
+<tr>
+<td class="family"> AMD Radeon Pro V520</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">0.379</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> AMD Radeon Pro V520</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">0.541</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> AMD Radeon Pro V520</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">0.867</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> AMD Radeon Pro V520</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">2</td>
+<td class="memory">128</td>
+<td class="cost">1.734</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> AMD Radeon Pro V520</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">4</td>
+<td class="memory">256</td>
+<td class="cost">3.468</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA A100 Tensor Core</td>
+<td class="name_1">p4d</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">1152</td>
+<td class="cost">32.773</td>
+<td class="cost">Intel Xeon Platinum 8275L</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA A100 Tensor Core</td>
+<td class="name_1">p4de</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">1152</td>
+<td class="cost">40.966</td>
+<td class="cost">Intel Xeon Platinum 8275L</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">1.006</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">1.212</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">1.624</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">1</td>
+<td class="memory">128</td>
+<td class="cost">2.448</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">1</td>
+<td class="memory">256</td>
+<td class="cost">4.096</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">4</td>
+<td class="memory">192</td>
+<td class="cost">5.672</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">4</td>
+<td class="memory">384</td>
+<td class="cost">8.144</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA A10G Tensor Core</td>
+<td class="name_1">g5</td>
+<td class="name_2">48xlarge</td>
+<td class="vcpu">192</td>
+<td class="gpu">8</td>
+<td class="memory">768</td>
+<td class="cost">16.288</td>
+<td class="cost">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA K80</td>
+<td class="name_1">p2</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">61</td>
+<td class="cost">0.900</td>
+<td class="cost">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA K80</td>
+<td class="name_1">p2</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">8</td>
+<td class="memory">488</td>
+<td class="cost">7.200</td>
+<td class="cost">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA K80</td>
+<td class="name_1">p2</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">16</td>
+<td class="memory">732</td>
+<td class="cost">14.400</td>
+<td class="cost">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">0.526</td>
+<td class="cost">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">0.752</td>
+<td class="cost">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">1.204</td>
+<td class="cost">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">1</td>
+<td class="memory">128</td>
+<td class="cost">2.176</td>
+<td class="cost">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">4</td>
+<td class="memory">192</td>
+<td class="cost">3.912</td>
+<td class="cost">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">1</td>
+<td class="memory">256</td>
+<td class="cost">4.352</td>
+<td class="cost">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4 Tensor Core</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">384</td>
+<td class="cost">7.824</td>
+<td class="cost">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">8</td>
+<td class="cost">0.420</td>
+<td class="cost">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">0.556</td>
+<td class="cost">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">0.828</td>
+<td class="cost">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">1.372</td>
+<td class="cost">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">2</td>
+<td class="memory">128</td>
+<td class="cost">2.744</td>
+<td class="cost">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA T4G Tensor Core</td>
+<td class="name_1">g5g</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">2</td>
+<td class="memory">128</td>
+<td class="cost">2.744</td>
+<td class="cost">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA Tesla M60</td>
+<td class="name_1">g3s</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">30.5</td>
+<td class="cost">0.750</td>
+<td class="cost">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA Tesla M60</td>
+<td class="name_1">g3</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">122</td>
+<td class="cost">1.140</td>
+<td class="cost">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA Tesla M60</td>
+<td class="name_1">g3</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">2</td>
+<td class="memory">244</td>
+<td class="cost">2.280</td>
+<td class="cost">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA Tesla M60</td>
+<td class="name_1">g3</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">4</td>
+<td class="memory">488</td>
+<td class="cost">4.560</td>
+<td class="cost">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA Tesla V100</td>
+<td class="name_1">p3</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">61</td>
+<td class="cost">3.060</td>
+<td class="cost">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA Tesla V100</td>
+<td class="name_1">p3</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">4</td>
+<td class="memory">244</td>
+<td class="cost">12.240</td>
+<td class="cost">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA Tesla V100</td>
+<td class="name_1">p3</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">8</td>
+<td class="memory">488</td>
+<td class="cost">24.480</td>
+<td class="cost">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family"> NVIDIA Tesla V100</td>
+<td class="name_1">p3dn</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">768</td>
+<td class="cost">31.212</td>
+<td class="cost">Intel Xeon Platinum 8175 (Skylake)</td>
+</tr>
+
+        </tbody>
+      </table>
+      <h2>All Instance Types</h2>
+      <table>
+        <tbody>
+          <tr>
+            <th>Family</th>
+            <th colspan="2">Name</th>
+            <th>vCPUs</th>
+            <th>GPUs</th>
+            <th>Memory</th>
+            <th>&dollar;/Hour</th>
+            <th></th>
+          </tr>
+          
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">0.034</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">0.036</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton3 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">0.038</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">0.043</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.068</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.072</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton3 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.076</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.077</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.085</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.085</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.086</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.086</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.096</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c4</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">3.75</td>
+<td class="cost">0.100</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2666 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.101</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">5.25</td>
+<td class="cost">0.108</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.136</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.145</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton3 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.153</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.154</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.170</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.170</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.172</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.173</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.192</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c4</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">7.5</td>
+<td class="cost">0.199</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2666 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.202</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">10.5</td>
+<td class="cost">0.216</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.272</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.290</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton3 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.306</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.307</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.340</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.340</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.344</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.346</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.384</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c4</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">15</td>
+<td class="cost">0.398</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2666 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.403</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">21</td>
+<td class="cost">0.432</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.544</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.580</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton3 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.612</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.614</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.680</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.680</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.688</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.691</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.768</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c4</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">30</td>
+<td class="cost">0.796</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2666 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.806</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">42</td>
+<td class="cost">0.864</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">1.088</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">1.160</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton3 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">1.224</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">1.229</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">1.360</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">1.376</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">1.382</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">9xlarge</td>
+<td class="vcpu">36</td>
+<td class="gpu">0</td>
+<td class="memory">72</td>
+<td class="cost">1.530</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c4</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">36</td>
+<td class="gpu">0</td>
+<td class="memory">60</td>
+<td class="cost">1.591</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2666 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">1.613</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">1.632</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">9xlarge</td>
+<td class="vcpu">36</td>
+<td class="gpu">0</td>
+<td class="memory">72</td>
+<td class="cost">1.728</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">1.740</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton3 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">1.836</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">1.843</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">9xlarge</td>
+<td class="vcpu">36</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">1.944</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">2.040</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8275L</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">2.040</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">2.064</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">2.074</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">2.176</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6g</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">2.176</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">2.304</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8275L</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c7g</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">2.320</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton3 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">2.419</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">2.448</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">2.458</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gd</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">2.458</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">2.720</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">2.752</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6gn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">2.765</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">18xlarge</td>
+<td class="vcpu">72</td>
+<td class="gpu">0</td>
+<td class="memory">144</td>
+<td class="cost">3.060</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">3.226</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">18xlarge</td>
+<td class="vcpu">72</td>
+<td class="gpu">0</td>
+<td class="memory">144</td>
+<td class="cost">3.456</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">3.672</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">18xlarge</td>
+<td class="vcpu">72</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">3.888</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5n</td>
+<td class="name_2">metal</td>
+<td class="vcpu">72</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">3.888</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8124M</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">4.080</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8275L</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">4.080</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8275L</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">4.080</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5ad</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">4.128</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">4.608</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8275L</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c5d</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">4.608</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8275L</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">4.838</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">4.896</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">5.440</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6i</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">5.440</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">6.451</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6id</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">6.451</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">48xlarge</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">7.344</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Compute optimized</td>
+<td class="name_1">c6a</td>
+<td class="name_2">metal</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">7.344</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">FPGA </td>
+<td class="name_1">f1</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">122</td>
+<td class="cost">1.650</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">FPGA </td>
+<td class="name_1">f1</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">244</td>
+<td class="cost">3.300</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">FPGA </td>
+<td class="name_1">f1</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">976</td>
+<td class="cost">13.200</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">0.379</td>
+<td class="gpu_name">AMD Radeon Pro V520</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">8</td>
+<td class="cost">0.420</td>
+<td class="gpu_name">NVIDIA T4G Tensor Core</td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">0.526</td>
+<td class="gpu_name">NVIDIA T4 Tensor Core</td>
+<td class="gpu_name">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">0.541</td>
+<td class="gpu_name">AMD Radeon Pro V520</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">0.556</td>
+<td class="gpu_name">NVIDIA T4G Tensor Core</td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g3s</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">30.5</td>
+<td class="cost">0.750</td>
+<td class="gpu_name">NVIDIA Tesla M60</td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">0.752</td>
+<td class="gpu_name">NVIDIA T4 Tensor Core</td>
+<td class="gpu_name">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5g</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">0.828</td>
+<td class="gpu_name">NVIDIA T4G Tensor Core</td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">0.867</td>
+<td class="gpu_name">AMD Radeon Pro V520</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">p2</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">61</td>
+<td class="cost">0.900</td>
+<td class="gpu_name">NVIDIA K80</td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">1</td>
+<td class="memory">16</td>
+<td class="cost">1.006</td>
+<td class="gpu_name">NVIDIA A10G Tensor Core</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g3</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">122</td>
+<td class="cost">1.140</td>
+<td class="gpu_name">NVIDIA Tesla M60</td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">1.204</td>
+<td class="gpu_name">NVIDIA T4 Tensor Core</td>
+<td class="gpu_name">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">32</td>
+<td class="cost">1.212</td>
+<td class="gpu_name">NVIDIA A10G Tensor Core</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5g</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">1.372</td>
+<td class="gpu_name">NVIDIA T4G Tensor Core</td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">1</td>
+<td class="memory">64</td>
+<td class="cost">1.624</td>
+<td class="gpu_name">NVIDIA A10G Tensor Core</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">2</td>
+<td class="memory">128</td>
+<td class="cost">1.734</td>
+<td class="gpu_name">AMD Radeon Pro V520</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">1</td>
+<td class="memory">128</td>
+<td class="cost">2.176</td>
+<td class="gpu_name">NVIDIA T4 Tensor Core</td>
+<td class="gpu_name">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g3</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">2</td>
+<td class="memory">244</td>
+<td class="cost">2.280</td>
+<td class="gpu_name">NVIDIA Tesla M60</td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">1</td>
+<td class="memory">128</td>
+<td class="cost">2.448</td>
+<td class="gpu_name">NVIDIA A10G Tensor Core</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5g</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">2</td>
+<td class="memory">128</td>
+<td class="cost">2.744</td>
+<td class="gpu_name">NVIDIA T4G Tensor Core</td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5g</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">2</td>
+<td class="memory">128</td>
+<td class="cost">2.744</td>
+<td class="gpu_name">NVIDIA T4G Tensor Core</td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">p3</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">1</td>
+<td class="memory">61</td>
+<td class="cost">3.060</td>
+<td class="gpu_name">NVIDIA Tesla V100</td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4ad</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">4</td>
+<td class="memory">256</td>
+<td class="cost">3.468</td>
+<td class="gpu_name">AMD Radeon Pro V520</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">4</td>
+<td class="memory">192</td>
+<td class="cost">3.912</td>
+<td class="gpu_name">NVIDIA T4 Tensor Core</td>
+<td class="gpu_name">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">1</td>
+<td class="memory">256</td>
+<td class="cost">4.096</td>
+<td class="gpu_name">NVIDIA A10G Tensor Core</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">1</td>
+<td class="memory">256</td>
+<td class="cost">4.352</td>
+<td class="gpu_name">NVIDIA T4 Tensor Core</td>
+<td class="gpu_name">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g3</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">4</td>
+<td class="memory">488</td>
+<td class="cost">4.560</td>
+<td class="gpu_name">NVIDIA Tesla M60</td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">4</td>
+<td class="memory">192</td>
+<td class="cost">5.672</td>
+<td class="gpu_name">NVIDIA A10G Tensor Core</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">p2</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">8</td>
+<td class="memory">488</td>
+<td class="cost">7.200</td>
+<td class="gpu_name">NVIDIA K80</td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g4dn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">384</td>
+<td class="cost">7.824</td>
+<td class="gpu_name">NVIDIA T4 Tensor Core</td>
+<td class="gpu_name">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">4</td>
+<td class="memory">384</td>
+<td class="cost">8.144</td>
+<td class="gpu_name">NVIDIA A10G Tensor Core</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">p3</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">4</td>
+<td class="memory">244</td>
+<td class="cost">12.240</td>
+<td class="gpu_name">NVIDIA Tesla V100</td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">p2</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">16</td>
+<td class="memory">732</td>
+<td class="cost">14.400</td>
+<td class="gpu_name">NVIDIA K80</td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">g5</td>
+<td class="name_2">48xlarge</td>
+<td class="vcpu">192</td>
+<td class="gpu">8</td>
+<td class="memory">768</td>
+<td class="cost">16.288</td>
+<td class="gpu_name">NVIDIA A10G Tensor Core</td>
+<td class="gpu_name">AMD EPYC 7R32</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">p3</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">8</td>
+<td class="memory">488</td>
+<td class="cost">24.480</td>
+<td class="gpu_name">NVIDIA Tesla V100</td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">p3dn</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">768</td>
+<td class="cost">31.212</td>
+<td class="gpu_name">NVIDIA Tesla V100</td>
+<td class="gpu_name">Intel Xeon Platinum 8175 (Skylake)</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">p4d</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">1152</td>
+<td class="cost">32.773</td>
+<td class="gpu_name">NVIDIA A100 Tensor Core</td>
+<td class="gpu_name">Intel Xeon Platinum 8275L</td>
+</tr>
+
+<tr>
+<td class="family">GPU instance</td>
+<td class="name_1">p4de</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">8</td>
+<td class="memory">1152</td>
+<td class="cost">40.966</td>
+<td class="gpu_name">NVIDIA A100 Tensor Core</td>
+<td class="gpu_name">Intel Xeon Platinum 8275L</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">nano</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">0.5</td>
+<td class="cost">0.004</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">nano</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">0.5</td>
+<td class="cost">0.005</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Skylake E5 2686 v5</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">nano</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">0.5</td>
+<td class="cost">0.005</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">micro</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">1</td>
+<td class="cost">0.008</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">micro</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">1</td>
+<td class="cost">0.009</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">micro</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">1</td>
+<td class="cost">0.010</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Skylake E5 2686 v5</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">small</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">0.017</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">small</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">0.019</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">small</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">0.021</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Skylake E5 2686 v5</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">2</td>
+<td class="cost">0.025</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">medium</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.034</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.038</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">medium</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.038</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">medium</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.042</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Skylake E5 2686 v5</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.045</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">4</td>
+<td class="cost">0.051</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.067</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.075</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.077</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.083</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Skylake E5 2686 v5</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.086</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.086</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.090</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t2</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.093</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.096</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.096</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.100</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2676 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.102</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.103</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.113</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.119</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.119</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.134</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.136</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.150</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.154</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.165</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.166</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Skylake E5 2686 v5</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.172</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.173</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.181</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t2</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.186</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.192</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.192</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.200</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2676 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.204</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.206</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.226</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.237</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.238</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t4g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.269</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.272</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.301</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.308</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.330</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t3</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.333</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Skylake E5 2686 v5</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.344</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.346</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.362</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">t2</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.371</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Family</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.384</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.384</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.400</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2676 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.408</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">a1</td>
+<td class="name_2">metal</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.408</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.412</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.452</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.475</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.476</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.544</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.616</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.661</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.688</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.691</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.723</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.768</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.768</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.800</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2676 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.824</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.904</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.949</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.952</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">3xlarge</td>
+<td class="vcpu">12</td>
+<td class="gpu">0</td>
+<td class="memory">48</td>
+<td class="cost">0.991</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">1.088</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.232</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.376</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.382</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.446</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.536</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.536</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.648</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.808</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">1.848</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.898</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.904</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">1.982</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">10xlarge</td>
+<td class="vcpu">40</td>
+<td class="gpu">0</td>
+<td class="memory">160</td>
+<td class="cost">2.000</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2676 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">2.064</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">2.074</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">2.170</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">2.176</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">2.304</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">2.304</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.464</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6g</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.464</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">2.472</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">2.712</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.752</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.765</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">2.848</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">2.856</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.893</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6gd</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.893</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">3.072</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">3.072</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m4</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">3.200</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">3.264</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">3.296</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">3.616</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">3.797</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">3.808</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">3.964</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5zn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">3.964</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5a</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">4.128</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">4.147</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">4.352</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">4.608</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">4.608</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">4.608</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5ad</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">4.944</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">5.424</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5d</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">5.424</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">5.530</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">5.695</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">5.712</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5n</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">5.712</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">6.144</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6i</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">6.144</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">6.528</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m5dn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">6.528</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">7.594</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6id</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">7.594</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">48xlarge</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">8.294</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">General purpose</td>
+<td class="name_1">m6a</td>
+<td class="name_2">metal</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">8.294</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">ML ASIC </td>
+<td class="name_1">inf1</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.228</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8275CL (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">ML ASIC </td>
+<td class="name_1">inf1</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.362</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8275CL (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">ML ASIC </td>
+<td class="name_1">inf1</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">48</td>
+<td class="cost">1.180</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8275CL (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">ML ASIC </td>
+<td class="name_1">inf1</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">4.721</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8275CL (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">ML ASIC </td>
+<td class="name_1">dl1</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">13.109</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8275L</td>
+</tr>
+
+<tr>
+<td class="family">Media Accelerator </td>
+<td class="name_1">vt1</td>
+<td class="name_2">3xlarge</td>
+<td class="vcpu">12</td>
+<td class="gpu">0</td>
+<td class="memory">24</td>
+<td class="cost">0.650</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259CL</td>
+</tr>
+
+<tr>
+<td class="family">Media Accelerator </td>
+<td class="name_1">vt1</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">48</td>
+<td class="cost">1.300</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259CL</td>
+</tr>
+
+<tr>
+<td class="family">Media Accelerator </td>
+<td class="name_1">vt1</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">5.200</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259CL</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.050</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.058</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.084</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.101</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.113</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.113</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.115</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.126</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.126</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.131</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">15.25</td>
+<td class="cost">0.133</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.144</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.149</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.149</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.151</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.167</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.167</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.186</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8151</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.202</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.226</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.227</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.230</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.252</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.252</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.262</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">30.5</td>
+<td class="cost">0.266</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.288</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.298</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.298</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.302</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.334</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.334</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.372</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8151</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.403</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.452</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.454</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.461</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.504</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.504</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.524</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">61</td>
+<td class="cost">0.532</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.576</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.596</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.596</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.605</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.668</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">0.668</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.744</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8151</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">0.806</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">122</td>
+<td class="cost">0.834</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">High Frequency Intel Xeon E7-8880 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">0.834</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">0.904</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">0.907</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">0.922</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.008</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.008</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.048</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">122</td>
+<td class="cost">1.064</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">3xlarge</td>
+<td class="vcpu">12</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">1.116</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8151</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.152</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.192</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.192</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.210</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.336</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">1.336</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">1.613</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">1.667</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">244</td>
+<td class="cost">1.668</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">High Frequency Intel Xeon E7-8880 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">1.668</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">1.808</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">1.814</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">1.843</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.016</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.016</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.096</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">244</td>
+<td class="cost">2.128</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">2.232</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8151</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.304</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.384</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.384</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">2.419</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.419</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.672</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">2.672</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">2.712</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">2.722</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">2.765</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">3.024</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">3.024</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">3.144</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">3.226</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6g</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">3.226</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">3.334</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">488</td>
+<td class="cost">3.336</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">High Frequency Intel Xeon E7-8880 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">3.336</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">3.456</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">3.576</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">3.576</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">3.616</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">3.629</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">3.629</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">3.686</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6gd</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">3.686</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">4.008</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">4.008</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">4.032</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">4.032</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">4.192</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r4</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">488</td>
+<td class="cost">4.256</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">4.464</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8151</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">z1d</td>
+<td class="name_2">metal</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">4.464</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8151</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">4.608</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">4.768</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">4.768</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">4.838</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">5.004</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">5.344</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">5.344</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2gd</td>
+<td class="name_2">metal</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">5.344</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5a</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">5.424</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">5.443</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">6.048</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">6.048</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">6.048</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5ad</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">6.288</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7571</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">976</td>
+<td class="cost">6.669</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">High Frequency Intel Xeon E7-8880 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2idn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">6.669</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">6.669</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">976</td>
+<td class="cost">6.672</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">High Frequency Intel Xeon E7-8880 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">6.672</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">6.912</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5d</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">6.912</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">7.152</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5b</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">7.152</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">7.152</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5n</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">7.152</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">7.258</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">7.258</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">8.016</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r5dn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">8.016</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">8.064</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6i</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">8.064</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">9.677</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6id</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">9.677</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2idn</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">1536</td>
+<td class="cost">10.004</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">1536</td>
+<td class="cost">10.008</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iezn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">1536</td>
+<td class="cost">10.008</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8252</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">48xlarge</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">1536</td>
+<td class="cost">10.886</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">r6a</td>
+<td class="name_2">metal</td>
+<td class="vcpu">192</td>
+<td class="gpu">0</td>
+<td class="memory">1536</td>
+<td class="cost">10.886</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AMD EPYC 7R13 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1952</td>
+<td class="cost">13.338</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">High Frequency Intel Xeon E7-8880 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2idn</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">2048</td>
+<td class="cost">13.338</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2idn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">2048</td>
+<td class="cost">13.338</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">2048</td>
+<td class="cost">13.338</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">1952</td>
+<td class="cost">13.344</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">High Frequency Intel Xeon E7-8880 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">3072</td>
+<td class="cost">20.007</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">4096</td>
+<td class="cost">26.676</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x2iedn</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">4096</td>
+<td class="cost">26.676</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Icelake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">x1e</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">3904</td>
+<td class="cost">26.688</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">High Frequency Intel Xeon E7-8880 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">u-3tb1</td>
+<td class="name_2">56xlarge</td>
+<td class="vcpu">224</td>
+<td class="gpu">0</td>
+<td class="memory">3072</td>
+<td class="cost">27.300</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Skylake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">u-6tb1</td>
+<td class="name_2">56xlarge</td>
+<td class="vcpu">224</td>
+<td class="gpu">0</td>
+<td class="memory">6144</td>
+<td class="cost">46.404</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Skylake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">u-6tb1</td>
+<td class="name_2">112xlarge</td>
+<td class="vcpu">448</td>
+<td class="gpu">0</td>
+<td class="memory">6144</td>
+<td class="cost">54.600</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Skylake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">u-9tb1</td>
+<td class="name_2">112xlarge</td>
+<td class="vcpu">448</td>
+<td class="gpu">0</td>
+<td class="memory">9216</td>
+<td class="cost">81.900</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Skylake)</td>
+</tr>
+
+<tr>
+<td class="family">Memory optimized</td>
+<td class="name_1">u-12tb1</td>
+<td class="name_2">112xlarge</td>
+<td class="vcpu">448</td>
+<td class="gpu">0</td>
+<td class="memory">12288</td>
+<td class="cost">109.200</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Scalable (Skylake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">medium</td>
+<td class="vcpu">1</td>
+<td class="gpu">0</td>
+<td class="memory">6</td>
+<td class="cost">0.144</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">15.25</td>
+<td class="cost">0.156</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.172</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">8</td>
+<td class="cost">0.182</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.226</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">large</td>
+<td class="vcpu">2</td>
+<td class="gpu">0</td>
+<td class="memory">12</td>
+<td class="cost">0.288</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">30.5</td>
+<td class="cost">0.312</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.343</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.364</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.452</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">h1</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.468</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.499</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">16</td>
+<td class="cost">0.526</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">24</td>
+<td class="cost">0.576</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">61</td>
+<td class="cost">0.624</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.686</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d2</td>
+<td class="name_2">xlarge</td>
+<td class="vcpu">4</td>
+<td class="gpu">0</td>
+<td class="memory">30.5</td>
+<td class="cost">0.690</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2676 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">0.728</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.904</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">h1</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.936</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">0.999</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">32</td>
+<td class="cost">1.051</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">48</td>
+<td class="cost">1.153</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">122</td>
+<td class="cost">1.248</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">3xlarge</td>
+<td class="vcpu">12</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">1.356</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.373</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d2</td>
+<td class="name_2">2xlarge</td>
+<td class="vcpu">8</td>
+<td class="gpu">0</td>
+<td class="memory">61</td>
+<td class="cost">1.380</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2676 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">1.455</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">h1</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.872</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">1.998</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">64</td>
+<td class="cost">2.103</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">2.305</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">244</td>
+<td class="cost">2.496</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">2.712</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">2.746</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d2</td>
+<td class="name_2">4xlarge</td>
+<td class="vcpu">16</td>
+<td class="gpu">0</td>
+<td class="memory">122</td>
+<td class="cost">2.760</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2676 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">2.910</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">6xlarge</td>
+<td class="vcpu">24</td>
+<td class="gpu">0</td>
+<td class="memory">96</td>
+<td class="cost">3.154</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">h1</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">3.744</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">3.996</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">128</td>
+<td class="cost">4.206</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">is4gen</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">32</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">4.610</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">488</td>
+<td class="cost">4.992</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3</td>
+<td class="name_2">metal</td>
+<td class="vcpu">72</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">4.992</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2686 v4 (Broadwell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">384</td>
+<td class="cost">5.424</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">512</td>
+<td class="cost">5.491</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d2</td>
+<td class="name_2">8xlarge</td>
+<td class="vcpu">36</td>
+<td class="gpu">0</td>
+<td class="memory">244</td>
+<td class="cost">5.520</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon E5-2676 v3 (Haswell)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">im4gn</td>
+<td class="name_2">16xlarge</td>
+<td class="vcpu">64</td>
+<td class="gpu">0</td>
+<td class="memory">256</td>
+<td class="cost">5.821</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">AWS Graviton2 Processor</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">d3en</td>
+<td class="name_2">12xlarge</td>
+<td class="vcpu">48</td>
+<td class="gpu">0</td>
+<td class="memory">192</td>
+<td class="cost">6.309</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8259 (Cascade Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">24xlarge</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">10.848</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i3en</td>
+<td class="name_2">metal</td>
+<td class="vcpu">96</td>
+<td class="gpu">0</td>
+<td class="memory">768</td>
+<td class="cost">10.848</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon Platinum 8175</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">32xlarge</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">10.982</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+<tr>
+<td class="family">Storage optimized</td>
+<td class="name_1">i4i</td>
+<td class="name_2">metal</td>
+<td class="vcpu">128</td>
+<td class="gpu">0</td>
+<td class="memory">1024</td>
+<td class="cost">10.982</td>
+<td class="gpu_name"></td>
+<td class="gpu_name">Intel Xeon 8375C (Ice Lake)</td>
+</tr>
+
+        </tbody>
+      </table>
+      <div class="prose">
+        <h2>Notes</h2>
+        <ul>
+          <li>Prices are in USD</li>
+          <li>
+            I put this togehter because I'm working on a comparison of EC2
+            instances for rendering blender files. I couldn't get my head around
+            the pricing from the AWS UI and since that's always bugged me we
+            ended up here
+          </li>
+          <li>
+            I didn't put in any of the storage or network notes. There's a bunch
+            of different types that would have added clutter to this basic price
+            list that I was after
+          </li>
+          <li>
+            If you'd like to dig into the pricing API to make your own views
+            I've got a good starting point
+            <a href="https://aws-price-list-api-values.alanwsmith.com/"
+              >setup here</a
+            >
+          </li>
+          <li>
+            As mentioned above, this data doesn't update live. If you want the
+            current values you can
+            <a
+              href="https://github.com/alanwsmith/aws-ec2-instance-pricing.alanwsmith.com"
+              >grab the source code here</a
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      made by <a href="https://twitter.com/TheIdOfAlan">alan w. smith</a>
+      <br />
+      who has a <a href="https://www.alanwsmith.com">website</a> and a
+      <a href="https://podcast.alanwsmith.com/">podcast</a> <br />
+      among other <a href="https://links.alanwsmith.com">things</a>
+    </footer>
+  </body>
+</html>
